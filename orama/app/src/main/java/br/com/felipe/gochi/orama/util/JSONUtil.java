@@ -57,6 +57,7 @@ public class JSONUtil {
 
             //Fundo Investimento
             fundoInvestimento.setSimpleName(investimento.getSimpleName());
+            fundoInvestimento.setCloseToCapture(investimento.getCloseToCapture());
 
             //Profitabilities
             profitabilities.setM12(investimento.getProfitabilities().

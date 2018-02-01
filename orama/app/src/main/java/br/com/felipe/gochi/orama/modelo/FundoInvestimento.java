@@ -18,6 +18,17 @@ public class FundoInvestimento {
     @SerializedName("specification")
     private Specification specification;
 
+    @SerializedName("is_closed_to_capture")
+    private Boolean isCloseToCapture;
+
+    public Boolean getCloseToCapture() {
+        return isCloseToCapture;
+    }
+
+    public void setCloseToCapture(Boolean closeToCapture) {
+        isCloseToCapture = closeToCapture;
+    }
+
     public Specification getSpecification() {
         return specification;
     }

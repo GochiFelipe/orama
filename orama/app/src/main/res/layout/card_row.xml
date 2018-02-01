@@ -84,6 +84,16 @@
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="30dp"
+        android:visibility="visible"
+        android:id="@+id/fundo_fechado"
+        android:drawableRight="@drawable/ic_block_black_24dp" />
+
     <ImageButton
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -91,6 +101,7 @@
         android:layout_gravity="center_vertical|right"
         android:backgroundTint="#f57c00"
         android:elevation="8dp"
+        android:id="@+id/button_invest"
         android:src="@drawable/ic_trending_up_black_24dp"/>
 
     <TextView

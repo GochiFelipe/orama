@@ -59,6 +59,13 @@ public class FundoInvestimentoAdapter extends RecyclerView.Adapter<FundoInvestim
             holder.mes.setText("-");
         }
 
+        if(String.valueOf(fundoInvestimentoList.get(position).getCloseToCapture()) == "true"){
+            holder.userCapture.setVisibility(View.VISIBLE);
+        }
+        else{
+            holder.userCapture.setVisibility(View.INVISIBLE);
+        }
+
 
         holder.simpleName.setText(fundoInvestimentoList.get(position).getSimpleName());
         holder.aplicacaoMinima.setText(fundoInvestimentoList.get(position).getOperability()
@@ -86,7 +93,8 @@ public class FundoInvestimentoAdapter extends RecyclerView.Adapter<FundoInvestim
 
     public class FundoInvestimentoHolder extends RecyclerView.ViewHolder {
 
-        TextView simpleName, ano, mes, aplicacaoMinima, corDeRisco, userQualify;
+        TextView simpleName, ano, mes, aplicacaoMinima, corDeRisco,
+                userQualify, userCapture;
 
         public FundoInvestimentoHolder(View itemView) {
             super(itemView);
@@ -96,6 +104,8 @@ public class FundoInvestimentoAdapter extends RecyclerView.Adapter<FundoInvestim
             aplicacaoMinima = itemView.findViewById(R.id.taxa_minima);
             corDeRisco = itemView.findViewById(R.id.cor_risco);
             userQualify = itemView.findViewById(R.id.investidor_qualificado);
+            userCapture = itemView.findViewById(R.id.fundo_fechado);
+
 
         }
     }

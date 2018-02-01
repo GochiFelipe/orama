@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import java.util.List;
 
@@ -25,7 +27,6 @@ public class FundoInvestimentoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fundo_investimento);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
     }
 
     @Override
@@ -42,6 +43,7 @@ public class FundoInvestimentoActivity extends AppCompatActivity {
 
         private RecyclerView recyclerView;
         private Context context;
+        private ProgressBar progressBar;
 
         public AsyncCaller(RecyclerView recyclerView, Context context){
             this.recyclerView = recyclerView;
@@ -56,6 +58,13 @@ public class FundoInvestimentoActivity extends AppCompatActivity {
         }
 
         @Override
+        protected void onPreExecute() {
+            progressBar = findViewById(R.id.progress_bar);
+            progressBar.setVisibility(View.VISIBLE);
+            super.onPreExecute();
+        }
+
+        @Override
         protected void onPostExecute(List<FundoInvestimento> fundoInvestimentos) {
             super.onPostExecute(fundoInvestimentos);
 
@@ -67,6 +76,8 @@ public class FundoInvestimentoActivity extends AppCompatActivity {
             recyclerView.setLayoutManager(layoutManager);
 
             recyclerView.setAdapter(adapter);
+            progressBar.setVisibility(View.INVISIBLE);
+            progressBar.getLayoutParams().height = 0;
 
         }
 
