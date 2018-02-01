@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">orama</string>
+    <string name="title_activity_fundos_investimento">FundosInvestimentoActivity</string>
+    <string name="title_activity_fundo_investimento">Fundos de Investimento</string>
+    <string name="title_activity_menu">MenuActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
